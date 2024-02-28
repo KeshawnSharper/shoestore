@@ -37,7 +37,7 @@ export function deleteOrder (id) {
  
 //     axios
 //       .get(
-//         `http://localhost:5000/orders/${localStorage.getItem("id")}`,
+//         `https://shop-be-wxaj.onrender.com/orders/${localStorage.getItem("id")}`,
 //         {
 //           headers: {
 //             "accept": "application/json"

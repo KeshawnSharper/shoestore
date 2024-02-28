@@ -25,9 +25,9 @@ export default function SignUp(props) {
    const handleSubmit = e => {
        e.preventDefault()
        setLoading(true)
-   Axios.post(`http://localhost:5000/register`,user).then(
+   Axios.post(`https://shop-be-wxaj.onrender.com/register`,user).then(
        res => {
-        Axios.post(`http://localhost:5000/login`,user).then(
+        Axios.post(`https://shop-be-wxaj.onrender.com/login`,user).then(
        res => {
         localStorage.setItem(`email`,res.data.email)
         localStorage.setItem(`token`,res.data.token)

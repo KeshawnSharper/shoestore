@@ -8,7 +8,7 @@ import axios from "axios";
  function Orders(props) {
    let [orders,setOrders] = useState([])
     useEffect(() => {
-        axios.get(`http://localhost:5000/orders/${localStorage.getItem("id")}`)
+        axios.get(`https://shop-be-wxaj.onrender.com/orders/${localStorage.getItem("id")}`)
         .then((response) => {
           setOrders(response.data)
         })
