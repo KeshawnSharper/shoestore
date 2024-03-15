@@ -6,7 +6,7 @@ import { Link,useNavigate } from "react-router-dom";
 
 export default function SignIn(props) {
    const [user,setUser] = useState({
-       email:"",
+       email:'',
        password:""
    })
    const [error,setError] = useState({})
