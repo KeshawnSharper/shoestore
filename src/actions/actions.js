@@ -22,7 +22,7 @@ export function removeCart (id) {
 }
 export function deleteOrder (id) {
     return (dispatch) => {
-        axios.delete(`https://shop-be-wxaj.onrender.com/orders/${id}`)
+        axios.delete(`https://shop-be-5e283fddc3f5.herokuapp.com/orders/${id}`)
   .then(res => {
       console.log(res.data)
       dispatch({type:"DELETE_ORDER",payload:id})
@@ -57,7 +57,7 @@ export function getOrders () {
     
     return (dispatch) => {
         
-        axios.get(`https://sneakerstore.herokuapp.com/orders/${localStorage.getItem("id")}`)
+        axios.get(`https://shop-be-5e283fddc3f5.herokuapp.com/orders/${localStorage.getItem("id")}`)
   .then(res => {
       console.log(res.data)
       dispatch({type:"ORDERS",payload:res.data})

@@ -43,7 +43,7 @@ export default function Search(props) {
   useEffect(() => {
     console.log(searchedSneakers)
     if (!JSON.parse(localStorage.getItem("sneakers"))){
-    axios.get(`https://shop-be-wxaj.onrender.com/sneakers`)
+    axios.get(`https://shop-be-5e283fddc3f5.herokuapp.com/sneakers`)
     .then((response) => {
       localStorage.setItem("sneakers",JSON.stringify(response.data))
       let shoes = response.data

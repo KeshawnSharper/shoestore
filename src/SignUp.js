@@ -25,13 +25,16 @@ export default function SignUp(props) {
    const handleSubmit = e => {
        e.preventDefault()
        setLoading(true)
-   Axios.post(`https://shop-be-wxaj.onrender.com/register`,user).then(
+   Axios.post(`https://shop-be-5e283fddc3f5.herokuapp.com/register`,user).then(
        res => {
-        Axios.post(`https://shop-be-wxaj.onrender.com/login`,user).then(
+        console.log(res.data)
+        Axios.post(`https://shop-be-5e283fddc3f5.herokuapp.com/login`,user).then(
        res => {
         localStorage.setItem(`email`,res.data.email)
         localStorage.setItem(`token`,res.data.token)
         localStorage.setItem(`id`,res.data.id)
+        localStorage.setItem(`user`, JSON.stringify(res.data.user));
+        console.log(res.data)
         navigate("/home");
         window.location.reload(false);
        })
