@@ -38,7 +38,7 @@ export default function Search(props) {
   const [price,setPrice] = useState({max:"",min:""})
   const [sneakers,setSneakers] = useState([])
   const [searchedSneakers,setSearchedSneakers] = useState([])
-  // const classes = useStyles();
+  
   
   useEffect(() => {
     console.log(searchedSneakers)
