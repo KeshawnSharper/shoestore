@@ -43,7 +43,7 @@ export default function Search(props) {
   useEffect(() => {
     console.log(searchedSneakers)
     if (!JSON.parse(localStorage.getItem("sneakers"))){
-    axios.get(`https://shop-be-5e283fddc3f5.herokuapp.com/sneakers`)
+    axios.get(`https://us-central1-shop-be-a676b.cloudfunctions.net/shop-be-c5370/us-central1/helloWorld/sneakers`)
     .then((response) => {
       localStorage.setItem("sneakers",JSON.stringify(response.data))
       let shoes = response.data

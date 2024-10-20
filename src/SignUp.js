@@ -25,10 +25,10 @@ export default function SignUp(props) {
    const handleSubmit = e => {
        e.preventDefault()
        setLoading(true)
-   Axios.post(`https://shop-be-5e283fddc3f5.herokuapp.com/register`,user).then(
+   Axios.post(`https://us-central1-shop-be-a676b.cloudfunctions.net/shop-be-c5370/us-central1/helloWorld/register`,user).then(
        res => {
         console.log(res.data)
-        Axios.post(`https://shop-be-5e283fddc3f5.herokuapp.com/login`,user).then(
+        Axios.post(`https://us-central1-shop-be-a676b.cloudfunctions.net/shop-be-c5370/us-central1/helloWorld/login`,user).then(
        res => {
         localStorage.setItem(`email`,res.data.email)
         localStorage.setItem(`token`,res.data.token)
