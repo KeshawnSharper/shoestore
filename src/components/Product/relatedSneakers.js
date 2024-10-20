@@ -32,7 +32,7 @@ export default function RelatedSneakers({id}) {
     const [relatedSneakers,setRelatedSneakers] = useState([])
     useEffect(() => {
     axios
-        .get(`https://us-central1-shop-be-a676b.cloudfunctions.net/shop-be-c5370/us-central1/helloWorld//reccommended_sneakers/${id}`)
+        .get(`https://helloworld-7nq5xbmzxq-uc.a.run.app//reccommended_sneakers/${id}`)
         .then((response) => {
             let shoes = response.data
             shoes = shoes.filter(sneak => (

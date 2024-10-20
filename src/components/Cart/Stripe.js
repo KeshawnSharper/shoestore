@@ -26,7 +26,7 @@ function Stripe(props) {
     price: props.total
   })
   async function handleToken(token, address) {
-    const response = await axios.post("https://us-central1-shop-be-a676b.cloudfunctions.net/shop-be-c5370/us-central1/helloWorld/checkout",
+    const response = await axios.post("https://helloworld-7nq5xbmzxq-uc.a.run.app/checkout",
       {
         token,
         product
@@ -62,7 +62,7 @@ function Stripe(props) {
         product.country = info.shipping_address_country;
         product.delivered = false;
         product.date_ordered = new Date();
-        axios.post("https://us-central1-shop-be-a676b.cloudfunctions.net/shop-be-c5370/us-central1/helloWorld/orders", product).then((res) => {
+        axios.post("https://helloworld-7nq5xbmzxq-uc.a.run.app/orders", product).then((res) => {
           console.log("res",res);
         })
         .catch((err) => console.log(err))
