@@ -26,7 +26,7 @@ function Stripe(props) {
     price: props.total
   })
   async function handleToken(token, address) {
-    const response = await axios.post("https://api-ikllluvkea-uc.a.run.app/checkout",
+    const response = await axios.post("https://api-ikllluvkea-uc.a.run.app/orders/checkout",
       {
         token,
         product
@@ -42,18 +42,19 @@ function Stripe(props) {
     }
     console.log(response.data);
   }
+  const user = JSON.parse(localStorage.getItem("user"))
   const purchaseCartItems = (info) => {
     props.cart.forEach((item,i) => {
       console.log(item)
       const product = {}
       product.index = i
-      product.user_id = Number(localStorage.getItem("id"))
+      product.user_id = Number(user.id)
       product.price = item.total
       product.quantity = item.quantity
       product.img = item.media.smallImageUrl
       product.name = item.title
       product.product_id = item.id;
-      product.email = localStorage.getItem("email");
+      product.email = Number(user.email)
       product.street =
         info.billing_address_line1 +
         info.billing_address_state +

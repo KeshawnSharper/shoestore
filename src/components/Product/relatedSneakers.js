@@ -32,7 +32,7 @@ export default function RelatedSneakers({id}) {
     const [relatedSneakers,setRelatedSneakers] = useState([])
     useEffect(() => {
     axios
-        .get(`https://api-ikllluvkea-uc.a.run.app/reccommended_sneakers/${id}`)
+        .get(`https://api-ikllluvkea-uc.a.run.app/sneakers/reccommended/${id}`)
         .then((response) => {
             let shoes = response.data
             shoes = shoes.filter(sneak => (
