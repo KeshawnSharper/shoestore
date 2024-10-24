@@ -43,7 +43,7 @@ export default function Search(props) {
   useEffect(() => {
     console.log(searchedSneakers)
     if (!JSON.parse(localStorage.getItem("sneakers"))){
-    axios.get(`https://helloworld-7nq5xbmzxq-uc.a.run.app/sneakers`)
+    axios.get(`https://api-ikllluvkea-uc.a.run.app/sneakers`)
     .then((response) => {
       localStorage.setItem("sneakers",JSON.stringify(response.data))
       let shoes = response.data
