@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {
   BrowserRouter,
   Routes,
@@ -16,6 +16,11 @@ import './styles.css'
 import SignIn from './SignIn'
 import SignUp from './SignUp'
 function App() {
+        useEffect(() => {
+                if (!localStorage.getItem("email") && JSON.parse(localStorage.getItem("user"))){
+                        
+                }
+        },[])
    
   return (
     <div className="app">

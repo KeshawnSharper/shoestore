@@ -25,10 +25,10 @@ export default function SignUp(props) {
    const handleSubmit = e => {
        e.preventDefault()
        setLoading(true)
-   Axios.post(`https://api-ikllluvkea-uc.a.run.app/register`,user).then(
+   Axios.post(`https://app-qmkzjxzkka-uc.a.run.app/register`,user).then(
        res => {
         console.log(res.data)
-        Axios.post(`https://api-ikllluvkea-uc.a.run.app/login`,user).then(
+        Axios.post(`https://app-qmkzjxzkka-uc.a.run.app/login`,user).then(
        res => {
         localStorage.setItem(`email`,res.data.email)
         localStorage.setItem(`token`,res.data.token)
