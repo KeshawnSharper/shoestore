@@ -8,7 +8,7 @@ import axios from "axios";
  function Orders(props) {
    let [orders,setOrders] = useState([])
     useEffect(() => {
-        axios.get(`https://app-qmkzjxzkka-uc.a.run.app/orders/${JSON.parse(localStorage.getItem("user")).id}`)
+        axios.get(`https://us-central1-shop-be-a532e.cloudfunctions.net/app/orders/${JSON.parse(localStorage.getItem("user")).id}`)
         .then((response) => {
           setOrders(response.data)
         })

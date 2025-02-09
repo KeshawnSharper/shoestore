@@ -22,7 +22,7 @@ export function removeCart (id) {
 }
 export function deleteOrder (id) {
     return (dispatch) => {
-        axios.delete(`https://app-qmkzjxzkka-uc.a.run.app/orders/${id}`)
+        axios.delete(`https://us-central1-shop-be-a532e.cloudfunctions.net/app/orders/${id}`)
   .then(res => {
       console.log(res.data)
       dispatch({type:"DELETE_ORDER",payload:id})
@@ -57,7 +57,7 @@ export function getOrders () {
     
     return (dispatch) => {
         
-        axios.get(`https://app-qmkzjxzkka-uc.a.run.app/orders/${localStorage.getItem("id")}`)
+        axios.get(`https://us-central1-shop-be-a532e.cloudfunctions.net/app/orders/${localStorage.getItem("id")}`)
   .then(res => {
       console.log(res.data)
       dispatch({type:"ORDERS",payload:res.data})

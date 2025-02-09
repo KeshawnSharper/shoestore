@@ -20,10 +20,11 @@ function App() {
                 if (!localStorage.getItem("email") && JSON.parse(localStorage.getItem("user"))){
                         
                 }
+
         },[])
    
   return (
-    <div className="app">
+    <div className="app" >
     <BrowserRouter>
       <Routes>
       <Route path="/" element={

@@ -9,7 +9,11 @@ export default function SignUp(props) {
    const [user,setUser] = useState({
        email:"",
        password:"",
-       user_name:""
+       user_name:"",
+       re_password:"",
+       picture:"",
+       first_name:"",
+       last_name:"",
    })
    const navigate = useNavigate()
    const [error,setError] = useState({})
@@ -25,10 +29,10 @@ export default function SignUp(props) {
    const handleSubmit = e => {
        e.preventDefault()
        setLoading(true)
-   Axios.post(`https://app-qmkzjxzkka-uc.a.run.app/register`,user).then(
+   Axios.post(`https://us-central1-shop-be-a532e.cloudfunctions.net/app/register`,user).then(
        res => {
         console.log(res.data)
-        Axios.post(`https://app-qmkzjxzkka-uc.a.run.app/login`,user).then(
+        Axios.post(`https://us-central1-shop-be-a532e.cloudfunctions.net/app/login`,user).then(
        res => {
         localStorage.setItem(`email`,res.data.email)
         localStorage.setItem(`token`,res.data.token)
@@ -69,6 +73,7 @@ export default function SignUp(props) {
         <input className="un " onChange={handleChange} name="email"type="text" align="center" placeholder="Email" />
         <input className="pass" onChange={handleChange} name="user_name"type="userName" align="center" placeholder="Username" />
         <input className="pass" onChange={handleChange} name="password"type="password" align="center" placeholder="Password" />
+        <input className="pass" onChange={handleChange} name="re_password"type="password" align="center" placeholder="Confirm Password" />
         <button className="submit" align="center" onClick={(e) => handleSubmit(e)}>SignUp</button>
         <Link to="/signin"><p className="forgot" align="center">Sign In</p></Link>
     </form>

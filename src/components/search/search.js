@@ -41,10 +41,14 @@ export default function Search(props) {
   
   
   useEffect(() => {
+    if (!document.body.clientHeight > window.innerHeight) {
+      window.location.reload()
+    }
     console.log(searchedSneakers)
     if (!JSON.parse(localStorage.getItem("sneakers"))){
-    axios.get(`https://app-qmkzjxzkka-uc.a.run.app/sneakers`)
+    axios.get(`http://127.0.0.1:5001/shop-be-a532e/us-central1/app/sneakers`)
     .then((response) => {
+      console.log("response",response)
       localStorage.setItem("sneakers",JSON.stringify(response.data))
       let shoes = response.data
       shoes = shoes.filter(sneak => (
